@@ -37,3 +37,7 @@ player_turn() manages the player's turn during the game.
 F10
 Computer's Turn:
 computer_turn() handles the computer's turn during the game.
+
+F11
+Game Execution:
+play_game() orchestrates the entire game, including ship placement and gameplay logic.

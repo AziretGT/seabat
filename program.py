@@ -126,3 +126,57 @@ def computer_turn(board, shots_board):
 
         if is_valid_shot(board, row, col, shots_board):
             return row, col
+        
+def play_game():
+    player_ships_board = create_board()
+    computer_ships_board = create_board()
+    player_shots_board = create_board()
+    computer_shots_board = create_board()
+
+    player_shots = [['O' for _ in range(7)] for _ in range(7)]
+    computer_shots = [['O' for _ in range(7)] for _ in range(7)]
+
+    print("Place your ships:")
+    place_ships_manually(player_ships_board)
+    print("\nComputer is placing ships...")
+    time.sleep(1)
+    place_ships(computer_ships_board)
+
+    while True:
+        print("\nPlayer's turn:")
+        print_player_board(player_ships_board, player_shots, computer_shots)
+        player_row, player_col = player_turn(computer_ships_board, computer_shots_board)
+
+        if computer_ships_board[player_row][player_col] != 'O':
+            print("Hit!")
+            computer_ships_board[player_row][player_col] = 'X'
+            player_shots[player_row][player_col] = 'X'
+            if are_all_ships_sunk(computer_ships_board):
+                print("Congratulations! You won!")
+                return
+        else:
+            print("Miss!")
+            player_shots[player_row][player_col] = '-'
+
+        if all(all(cell in ['X', '-'] for cell in row) for row in computer_ships_board):
+            print("Congratulations! You won!")
+            break
+
+        print("\nComputer's turn:")
+        time.sleep(1)
+        computer_row, computer_col = computer_turn(player_ships_board, player_shots_board)
+
+        if player_ships_board[computer_row][computer_col] != 'O':
+            print("Computer hit your ship!")
+            player_ships_board[computer_row][computer_col] = 'X'
+            computer_shots[computer_row][computer_col] = 'X'
+            if are_all_ships_sunk(player_ships_board):
+                print("Computer won!")
+                return
+        else:
+            print("Computer missed!")
+            computer_shots[computer_row][computer_col] = '-'
+
+        if all(all(cell in ['X', '-'] for cell in row) for row in player_ships_board):
+            print("Computer won!")
+            break
