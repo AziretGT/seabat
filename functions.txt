@@ -9,3 +9,7 @@ print_player_board() function prints the player's ships, shots, and the computer
 F3
 Ship Placement Validation:
 is_valid_position() checks if a ship can be placed at a given position on the board.
+
+F4
+Checking for Sunk Ships:
+are_all_ships_sunk() checks if all ships on a board have been sunk.

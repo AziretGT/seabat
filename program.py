@@ -32,3 +32,10 @@ def is_valid_position(board, ship, row, col):
                     return False
 
     return True
+
+def are_all_ships_sunk(board):
+    for row in board:
+        for cell in row:
+            if cell in ['1', '2', '3']:
+                return False
+    return True
