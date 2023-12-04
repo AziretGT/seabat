@@ -71,3 +71,25 @@ def place_ships_manually(board):
     for ship_size, ship_count in ships.items():
         for _ in range(ship_count):
             place_ship_manually(board, ship_size)
+
+def place_ships(board):
+    ships = {
+        3: [(0, 0), (0, 1), (0, 2)],
+        2: [(0, 0), (0, 1)],
+        1: [(0, 0)]
+    }
+
+    for ship_size, ship_cells in ships.items():
+        for _ in range(4 if ship_size == 1 else 2):
+            placed = False
+            while not placed:
+                row = random.randint(0, 6)
+                col = random.randint(0, 6)
+                orientation = random.choice(['H', 'V'])
+                ship_cells = [(0, i) if orientation == 'H' else (i, 0) for i in range(ship_size)]
+
+                if is_valid_position(board, ship_cells, row, col):
+                    for r, c in ship_cells:
+                        board[row + r][col + c] = str(ship_size)
+                    placed = True
+    return board

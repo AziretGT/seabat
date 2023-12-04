@@ -21,3 +21,7 @@ place_ship_manually() allows the player to manually place ships on the board.
 F6
 Manual Ship Placement (Main Function):
 place_ships_manually() coordinates the manual placement of all ships.
+
+F7
+Random Ship Placement:
+place_ships() randomly places ships for the computer on its board.
