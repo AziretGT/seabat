@@ -1,0 +1,4 @@
+F1
+Board Initialization:
+create_board() function creates a 7x7 board filled with 'O's.
+
