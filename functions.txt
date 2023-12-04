@@ -5,3 +5,7 @@ create_board() function creates a 7x7 board filled with 'O's.
 F2
 Printing Player's Board:
 print_player_board() function prints the player's ships, shots, and the computer's shots on the board.
+
+F3
+Ship Placement Validation:
+is_valid_position() checks if a ship can be placed at a given position on the board.
