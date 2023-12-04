@@ -33,3 +33,7 @@ is_valid_shot() checks if the player's shot at a given position is valid.
 F9
 Player's Turn:
 player_turn() manages the player's turn during the game.
+
+F10
+Computer's Turn:
+computer_turn() handles the computer's turn during the game.

@@ -118,3 +118,11 @@ def player_turn(board, shots_board):
 
         except ValueError:
             print("Invalid input format. Please use format like 'A:3'.")
+
+def computer_turn(board, shots_board):
+    while True:
+        row = random.randint(0, 6)
+        col = random.randint(0, 6)
+
+        if is_valid_shot(board, row, col, shots_board):
+            return row, col
