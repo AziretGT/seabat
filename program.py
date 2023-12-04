@@ -93,3 +93,11 @@ def place_ships(board):
                         board[row + r][col + c] = str(ship_size)
                     placed = True
     return board
+
+def is_valid_shot(board, row, col, shots_board):
+    rows, cols = len(board), len(board[0])
+
+    if not (0 <= row < rows and 0 <= col < cols):
+        return False
+
+    return shots_board[row][col] == 'O'

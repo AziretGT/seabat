@@ -25,3 +25,7 @@ place_ships_manually() coordinates the manual placement of all ships.
 F7
 Random Ship Placement:
 place_ships() randomly places ships for the computer on its board.
+
+F8
+Validating Player's Shot:
+is_valid_shot() checks if the player's shot at a given position is valid.
