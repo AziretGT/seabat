@@ -13,3 +13,7 @@ is_valid_position() checks if a ship can be placed at a given position on the bo
 F4
 Checking for Sunk Ships:
 are_all_ships_sunk() checks if all ships on a board have been sunk.
+
+F5
+Manual Ship Placement:
+place_ship_manually() allows the player to manually place ships on the board.

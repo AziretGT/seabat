@@ -39,3 +39,24 @@ def are_all_ships_sunk(board):
             if cell in ['1', '2', '3']:
                 return False
     return True
+
+def place_ship_manually(board, ship_size):
+    while True:
+        print_player_board(board, create_board(), create_board())
+        try:
+            position = input(f"Enter position (e.g., A:3) for ship of size {ship_size}: ").strip().upper()
+            col = ord(position[0]) - ord('A')
+            row = int(position[2:]) - 1
+
+            orientation = input("Enter orientation (H for horizontal, V for vertical): ").upper()
+
+            ship_cells = [(0, i) if orientation == 'H' else (i, 0) for i in range(ship_size)]
+
+            if is_valid_position(board, ship_cells, row, col):
+                for r, c in ship_cells:
+                    board[row + r][col + c] = str(ship_size)
+                break
+            else:
+                print("Invalid position or ships touching. Try again.")
+        except (ValueError, IndexError):
+            print("Invalid input format or position. Please try again.")
