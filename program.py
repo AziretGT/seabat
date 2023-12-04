@@ -101,3 +101,20 @@ def is_valid_shot(board, row, col, shots_board):
         return False
 
     return shots_board[row][col] == 'O'
+
+def player_turn(board, shots_board):
+    while True:
+        try:
+            move = input("Enter your move (e.g., A:3): ").strip().upper()
+            if len(move) < 3 or not move[0].isalpha() or not move[1] == ":" or not move[2:].isdigit():
+                raise ValueError
+            col = ord(move[0]) - ord('A')
+            row = int(move[2:]) - 1
+
+            if is_valid_shot(board, row, col, shots_board):
+                return row, col
+            else:
+                print("Invalid move. Try again.")
+
+        except ValueError:
+            print("Invalid input format. Please use format like 'A:3'.")
