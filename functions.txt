@@ -41,3 +41,7 @@ computer_turn() handles the computer's turn during the game.
 F11
 Game Execution:
 play_game() orchestrates the entire game, including ship placement and gameplay logic.
+
+F12
+Game Initialization and Execution:
+The main block of code (if __name__ == "__main__":) initializes the game by calling play_game().
