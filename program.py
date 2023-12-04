@@ -60,3 +60,14 @@ def place_ship_manually(board, ship_size):
                 print("Invalid position or ships touching. Try again.")
         except (ValueError, IndexError):
             print("Invalid input format or position. Please try again.")
+
+def place_ships_manually(board):
+    ships = {
+        3: 1,
+        2: 2,
+        1: 4
+    }
+
+    for ship_size, ship_count in ships.items():
+        for _ in range(ship_count):
+            place_ship_manually(board, ship_size)

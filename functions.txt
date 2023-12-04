@@ -17,3 +17,7 @@ are_all_ships_sunk() checks if all ships on a board have been sunk.
 F5
 Manual Ship Placement:
 place_ship_manually() allows the player to manually place ships on the board.
+
+F6
+Manual Ship Placement (Main Function):
+place_ships_manually() coordinates the manual placement of all ships.
