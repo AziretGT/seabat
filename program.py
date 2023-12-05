@@ -180,3 +180,6 @@ def play_game():
         if all(all(cell in ['X', '-'] for cell in row) for row in player_ships_board):
             print("Computer won!")
             break
+
+if __name__ == "__main__":
+    play_game()
